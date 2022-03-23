@@ -1,0 +1,21 @@
+// Generar id única
+
+export const generarId = () => {
+    const random = Math.random().toString(36).substring(2)
+    const date = Date.now().toString(36)
+    return random + date
+}
+
+// Formeatear fecha
+
+export const formatearFecha = fecha => {
+    const fechaNueva = new Date(fecha)
+
+    const parametros = {
+        year: 'numeric',
+        month: 'long',
+        day: '2-digit'
+    }
+
+    return fechaNueva.toLocaleDateString('es-ES', parametros)
+}
